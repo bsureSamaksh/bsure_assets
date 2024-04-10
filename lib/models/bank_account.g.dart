@@ -22,7 +22,8 @@ Map<String, dynamic> _$$BankResponseImplToJson(_$BankResponseImpl instance) =>
       'assets': instance.assets,
     };
 
-_$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
+_$BankAccountImpl _$$BankAccountImplFromJson(Map<String, dynamic> json) =>
+    _$BankAccountImpl(
       category: json['category'] as String,
       bankName: json['bankName'] as String,
       assetId: json['assetId'] as int,
@@ -34,7 +35,7 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
       accountNumber: json['accountNumber'] as String,
     );
 
-Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
+Map<String, dynamic> _$$BankAccountImplToJson(_$BankAccountImpl instance) =>
     <String, dynamic>{
       'category': instance.category,
       'bankName': instance.bankName,

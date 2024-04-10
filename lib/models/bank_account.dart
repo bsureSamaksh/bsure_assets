@@ -28,7 +28,7 @@ class BankAccount with _$BankAccount {
     required String branchName,
     required String ifscCode,
     required String accountNumber,
-  }) = _Asset;
+  }) = _BankAccount;
 
   factory BankAccount.fromJson(Map<String, Object?> json) =>
       _$BankAccountFromJson(json);

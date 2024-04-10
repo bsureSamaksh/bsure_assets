@@ -206,7 +206,7 @@ abstract class _BankResponse implements BankResponse {
 }
 
 BankAccount _$BankAccountFromJson(Map<String, dynamic> json) {
-  return _Asset.fromJson(json);
+  return _BankAccount.fromJson(json);
 }
 
 /// @nodoc
@@ -310,11 +310,11 @@ class _$BankAccountCopyWithImpl<$Res, $Val extends BankAccount>
 }
 
 /// @nodoc
-abstract class _$$AssetImplCopyWith<$Res>
+abstract class _$$BankAccountImplCopyWith<$Res>
     implements $BankAccountCopyWith<$Res> {
-  factory _$$AssetImplCopyWith(
-          _$AssetImpl value, $Res Function(_$AssetImpl) then) =
-      __$$AssetImplCopyWithImpl<$Res>;
+  factory _$$BankAccountImplCopyWith(
+          _$BankAccountImpl value, $Res Function(_$BankAccountImpl) then) =
+      __$$BankAccountImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -330,11 +330,11 @@ abstract class _$$AssetImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AssetImplCopyWithImpl<$Res>
-    extends _$BankAccountCopyWithImpl<$Res, _$AssetImpl>
-    implements _$$AssetImplCopyWith<$Res> {
-  __$$AssetImplCopyWithImpl(
-      _$AssetImpl _value, $Res Function(_$AssetImpl) _then)
+class __$$BankAccountImplCopyWithImpl<$Res>
+    extends _$BankAccountCopyWithImpl<$Res, _$BankAccountImpl>
+    implements _$$BankAccountImplCopyWith<$Res> {
+  __$$BankAccountImplCopyWithImpl(
+      _$BankAccountImpl _value, $Res Function(_$BankAccountImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -350,7 +350,7 @@ class __$$AssetImplCopyWithImpl<$Res>
     Object? ifscCode = null,
     Object? accountNumber = null,
   }) {
-    return _then(_$AssetImpl(
+    return _then(_$BankAccountImpl(
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -393,8 +393,8 @@ class __$$AssetImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AssetImpl with DiagnosticableTreeMixin implements _Asset {
-  _$AssetImpl(
+class _$BankAccountImpl with DiagnosticableTreeMixin implements _BankAccount {
+  _$BankAccountImpl(
       {required this.category,
       required this.bankName,
       required this.assetId,
@@ -405,8 +405,8 @@ class _$AssetImpl with DiagnosticableTreeMixin implements _Asset {
       required this.ifscCode,
       required this.accountNumber});
 
-  factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AssetImplFromJson(json);
+  factory _$BankAccountImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BankAccountImplFromJson(json);
 
   @override
   final String category;
@@ -452,7 +452,7 @@ class _$AssetImpl with DiagnosticableTreeMixin implements _Asset {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AssetImpl &&
+            other is _$BankAccountImpl &&
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.bankName, bankName) ||
@@ -480,19 +480,19 @@ class _$AssetImpl with DiagnosticableTreeMixin implements _Asset {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
-      __$$AssetImplCopyWithImpl<_$AssetImpl>(this, _$identity);
+  _$$BankAccountImplCopyWith<_$BankAccountImpl> get copyWith =>
+      __$$BankAccountImplCopyWithImpl<_$BankAccountImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AssetImplToJson(
+    return _$$BankAccountImplToJson(
       this,
     );
   }
 }
 
-abstract class _Asset implements BankAccount {
-  factory _Asset(
+abstract class _BankAccount implements BankAccount {
+  factory _BankAccount(
       {required final String category,
       required final String bankName,
       required final int assetId,
@@ -501,9 +501,10 @@ abstract class _Asset implements BankAccount {
       required final String accountType,
       required final String branchName,
       required final String ifscCode,
-      required final String accountNumber}) = _$AssetImpl;
+      required final String accountNumber}) = _$BankAccountImpl;
 
-  factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
+  factory _BankAccount.fromJson(Map<String, dynamic> json) =
+      _$BankAccountImpl.fromJson;
 
   @override
   String get category;
@@ -525,6 +526,6 @@ abstract class _Asset implements BankAccount {
   String get accountNumber;
   @override
   @JsonKey(ignore: true)
-  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
+  _$$BankAccountImplCopyWith<_$BankAccountImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
